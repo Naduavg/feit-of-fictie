@@ -1,0 +1,319 @@
+/*  BASISSTIJLEN  */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "avenir-next-lt-pro", sans-serif;
+  font-weight: 80;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  width: 100%;
+}
+
+
+.top{
+  display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+main{
+  width: 80%;
+  display: flex;
+  align-self: center;
+}
+
+
+h1{
+    /*background-color: #14580C;*/
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-family: "gravita-geo-variable", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+
+.titel{
+  color: rgb(255, 255, 255);
+  margin: 1vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  width: 20vw;
+}
+
+.onderkop{
+  font-size: 2.5vw;
+  margin-top: 0px;
+}
+
+
+h3 {
+  font-family: "gravita-geo-variable", sans-serif;
+  font-size: 4vw;
+  color: rgb(0, 0, 225);
+  line-height: 4vw;
+}
+
+p{
+font-size: 1.3vw;
+font-family: "avenir-next-lt-pro", sans-serif;
+font-weight: 80;
+font-style: normal;
+
+}
+
+.slogan{
+  font-style: italic;
+padding-left: 10%;
+text-align: start;
+font-size: 190%;
+}
+
+
+/* menu balk*/
+.menu{
+  display: flex;
+  justify-content: space-around;
+}
+
+.tablink {
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 138, 30);
+  font-family: "gravita-geo-variable", sans-serif;
+  font-variation-settings: "wght" 700;
+  font-size: 1.6vw;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1% 1%;
+  border-radius: 8px;
+  margin: 0.2em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tablink:hover {
+  box-shadow: 6px 6px rgb(181, 248, 0);
+  transform: scale(1.03);
+  padding: 1%;
+}
+
+.tablink.active {
+  color: rgb(284, 108, 0);
+}
+
+.tabcontent {
+  color: rgb(0, 0, 0);
+  display: none;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3vw;
+}
+
+.tabmenu {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around;
+  gap: 0.5em;
+  margin: 1em auto;
+  padding: 0.5em 0;
+  max-width: 1200px;
+  width: 100%;
+  margin-right: 2vw;
+}
+
+.select {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+.select:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+}
+
+#streepheader{
+background-color: rgb(181, 248, 0);
+  width: 100%;
+height: 0.5vw;
+}
+
+.streeppagina{
+  background-color: rgb(255, 138, 30);
+  width: 50%;
+  height: 0.3vw;
+  display: flex;
+  justify-self: center;
+  }
+
+  .streeppaginagroen{
+    background-color: rgb(181, 248, 0);
+    width: 50%;
+    height: 0.3vw;
+    display: flex;
+    justify-self: center;
+  }
+
+.uitleg{
+  font-size: 90%;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+figure{
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.footer{
+  display: block;
+  font-style: italic;
+  unicode-bidi: isolate;
+  font-size: 70%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
+/* overig */
+.downloadbutton{
+  border-radius: 1vw;
+  background-color: rgb(0, 0, 225);
+  color: rgb(255, 255, 255);
+  border: 0px;
+  font-size: 3vw;
+  padding: 2vw;
+  margin-top: 2vw;
+  margin-bottom: 5vw;
+  cursor: pointer;
+  box-shadow: 4px 8px rgb(255, 138, 30);
+}
+
+.downloaden{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+
+}
+
+input{
+  width: 30vw;
+  height: 3vw;
+  border-radius: 0.7vw;
+  border: 0.3vw solid rgb(181, 248, 0);
+}
+
+
+.reden{
+  width: 30vw;
+  height: 3vw;
+  border-radius: 0.7vw;
+  border-color: rgb(181, 248, 0);
+  border-width: 0.3vw;
+}
+
+
+
+form{
+  font-size: 1.3vw;
+font-family: "avenir-next-lt-pro", sans-serif;
+font-weight: 600;
+}
+
+.formknop{
+  background-color: rgb(0, 0, 225);
+  color: rgb(255, 255, 255);
+  border: 0px;
+  cursor: pointer;
+  box-shadow: 4px 8px rgb(255, 138, 30);
+  font-size: 1.5vw;
+  font-family: "avenir-next-lt-pro", sans-serif;
+  font-weight: 600;
+  width: 20vw;
+}
+
+.meldingsformulier{
+  font-size: 2vw;
+font-weight: 600;
+color: rgb(0, 0, 225);
+  font-family: "gravita-geo-variable", sans-serif;
+  display: flex;
+justify-content: center;
+flex-direction: column;
+margin-bottom: 0.4vw;
+text-align: center;
+}
+
+textarea{
+  width: 30vw;
+  height: 10vw;
+  border-radius: 0.7vw;
+  border-color: rgb(181, 248, 0);
+  border-width: 0.3vw;
+}
+
+.merchgeheel{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.merchonderdelen{
+  display: flex;
+  flex-direction: column;
+  margin: 2vw;
+}
+
+  .merchbeeld{
+  border-radius: 2vw;
+  cursor: pointer;
+  border: 0.3vw solid rgb(181, 248, 0);
+  padding: 3vw;
+}
+
+.merchtitel{
+  font-size: 2vw;
+  font-weight: 600;
+  color: rgb(0, 0, 225);
+    font-family: "gravita-geo-variable", sans-serif;
+}
+
+.infokop{
+  font-size: 2vw;
+  font-weight: 600;
+  color: rgb(0, 0, 225);
+  font-family: "gravita-geo-variable", sans-serif;
+  margin-bottom: 1vw;
+}
+
+.infotitel{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2vw;
+  font-weight: 600;
+  color: rgb(0, 0, 225);
+  font-family: "gravita-geo-variable", sans-serif;
+  margin-bottom: 1vw;
+}
+
+.downloadinfo{
+  text-align: left;
+}
