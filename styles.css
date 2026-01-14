@@ -295,13 +295,14 @@ textarea{
   display: flex;
   flex-direction: column;
   margin: 2vw;
+  width: 33%;
 }
 
   .merchbeeld{
-  border-radius: 2vw;
+  border-radius: 1.5vw;
   cursor: pointer;
   border: 0.3vw solid rgb(181, 248, 0);
-  padding: 3vw;
+  margin-bottom: 2vw;
 }
 
 .merchtitel{
