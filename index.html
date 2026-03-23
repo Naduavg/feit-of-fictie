@@ -9,208 +9,603 @@
   <link href="styles.css" rel="stylesheet">
   <script src="script.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="img/png" rel="noopener" target="_blank" href="beeld/LogoF.png">
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Capriola&family=Mea+Culpa&family=Rum+Raisin&display=swap" rel="stylesheet">
+  <link rel="icon" type="img/png" href="beeld/Logos/ffblauwfavi.png">
+  <link rel="stylesheet" href="https://use.typekit.net/mmi5nep.css">
 </head>
 
-	<body>
-		<header>	
-			<div class="top">
-				<h1 class="titel">
-					<img src="beeld/HeaderLogo.png" alt="headerlogo">
-				</h1>
+<body>
 
-				<!-- menu balk-->
-				<div class="tabmenu">
-					<button class="tablink" onclick="openPage('home', this )" id="defaultOpen">home</button>
-					<button class="tablink" onclick="openPage('informatie', this)" >informatie</button>
-					<button class="tablink" onclick="openPage('extensie', this)">extensie</button>
-					<button class="tablink" onclick="openPage('melden', this)">melden</button>
-					<button class="tablink" onclick="openPage('merchendise', this)">merchandise</button>
-					</div>
-			
-			</div>
+  <header>
+    <nav class="top">
+      <div class="nav-logo">
+        <img src="beeld/Logos/ffwit.png" alt="Feit of Fictie logo">
+      </div>
+      <div class="tabmenu">
+        <button type="button" class="tablink" onclick="openPage('home', this)" id="defaultOpen">Home</button>
+        <button type="button" class="tablink" id="tab-informatie" onclick="openPage('informatie', this)">Informatie</button>
+        <button type="button" class="tablink" id="tab-extensie" onclick="openPage('extensie', this)">Extensie</button>
+        <button type="button" class="tablink" id="tab-melden" onclick="openPage('melden', this)">Project</button>
+        <button type="button" class="tablink" id="tab-merchendise" onclick="openPage('merchendise', this)">Webshop</button>
+      </div>
+      <button type="button" class="herken-btn" onclick="openPage('home', document.getElementById('defaultOpen'))">Herken</button>
+    </nav>
+  </header>
 
-		</header>
-		<section id="streepheader">
+  <main>
 
-		</section>
-		<main>
+    <!-- ===== HOME TAB ===== -->
+    <div id="home" class="tabcontent">
 
-		<!-- home-->
-						<div id="home" class="tabcontent">
-							<h3 class="homekop">Blijf kritisch, volg de feiten</h3>
-							<p class="onderonderkop">
-								Niet iedereen die je volgt deelt de feiten, blijf kritisch binnen fictie van Facebook.
-							</p>
-							<br>
-							<p class="infokop">Herken complottheorieën/fictie:</p>
-							<div class="herkenlijst">
-							<ul>1. De informatie was geheim </ul>
-							<ul>2. Er is spraken van een samenzwering</ul>
-							<ul>3. Het is ten nadele van een groep mensen</ul>
-							<ul>4. Er zitten kwaadaardige bedoelingen achter</ul>	
-						</div>
-								
-						</div>
+      <!-- Hero — navy card, sits on top of the lime banner below -->
+      <section class="section-navy card card-over section-pad">
+        <div class="container hero-grid">
+          <div class="hero-img">
+            <img src="beeld/Mockup/karin1.jpg" alt="Kijk kritisch">
+          </div>
+          <div class="hero-text">
+            <h2 class="white">Kijk kritisch,<br>volg de feiten</h2>
+            <div class="hero-cta">
+              <button type="button" class="btn-orange" onclick="openPage('extensie', document.getElementById('tab-extensie'))">Doe mee!</button> <!-- extensie -->
+            </div>
+          </div>
+        </div>
+      </section>
 
-	<!-- Informatie-->						
-	<div id="informatie" class="tabcontent">
-		<h3>Informatie</h3>
-		<p>
-				We leven in een tijd waarin het leven onrustig is en online niks meer te vertrouwen is. Wat is feit en wat is fictie. Wie kan je vertrouwen om de waarheid nog te zeggen. In de digitale wereld kom je niet voorbij algoritmes en filterbubbels, maar je kan jezelf er wel tegen beschermen. Wees niet naïef en informeer jezelf over alles wat met nep nieuws en complotten te maken heeft.
+      <!-- Lime banner — lime card, flush against the navy hero above -->
+      <section class="section-lime card card-flush-top">
+        <div class="container banner-grid">
+          <p class="navy">Kijk kritisch naar Facebook-pagina's. Laat je niet meeslepen in pakkende koppen en geheimzinnige verhalen. Volg de feiten.</p>
+          <h2 class="brand-name navy">Feit of fictie</h2>
+        </div>
+      </section>
 
-			<div class="streeppagina">
-			</div>
-			<br>
-			<h1 class="infokop">Voor meer informatie over complottheorieën ga naar:</h1>
-			 <br><br>
-			 <div class="herkenlijst">
-				<a href="ttps://www.mediawijsheid.nl/">Mediawijsheid.nl</a>
-				<a href="https://www.mediawijs.be/nl/dossiers/complotdenken ">Mediawijs.be</a>
-				<a href="https://www.uva.nl/shared-content/faculteiten/nl/faculteit-der-geesteswetenschappen/nieuws/2022/06/de-wortels-van-de-complottheorie.html">Artikel Universiteit Amsterdam</a>
-				<a href="https://www.awbruna.nl/boek/non-fictie/jan-willem-van-prooijen/hoax/">Hoax, Jan-willem van Prooijen</a>
-				
-			</div>				<br><br>
+      <!-- Web extensie — white, full bleed -->
+      <section class="section-white section-pad">
+        <div class="container text-center">
+          <h2 class="section-title navy">Web extensie</h2>
+          <div class="three-boxes">
+            <div class="box-item">
+              <div class="orange-box orange-box--icon">
+                <img src="beeld/Icons/installeer.png" alt="Installeer" width="120" height="120" class="orange-box__img">
+              </div>
+              <p class="navy">Installeer</p>
+            </div>
+            <div class="box-item">
+              <div class="orange-box orange-box--icon">
+                <img src="beeld/Icons/controleer.png" alt="Controleer" width="120" height="120" class="orange-box__img">
+              </div>
+              <p class="navy">Controleer</p>
+            </div>
+            <div class="box-item">
+              <div class="orange-box orange-box--icon">
+                <img src="beeld/Icons/deel.png" alt="Deel" width="120" height="120" class="orange-box__img">
+              </div>
+              <p class="navy">Deel</p>
+            </div>
+          </div>
+          <button type="button" class="btn-navy" onclick="openPage('extensie', document.getElementById('tab-extensie'))">Meer info</button> <!-- extensie -->
+        </div>
+      </section>
 
+      <!-- Missie / Visie — lime card, sits on top of navy Webshop below -->
+      <section class="section-lime card card-over section-pad">
+        <div class="container two-col">
+          <div>
+            <h3 class="col-heading navy">Missie</h3>
+            <p class="navy">Generatie X helpen kritisch te kijken naar de betrouwbaarheid van content op Facebook, op een laagdrempelige en toegankelijke manier, zonder angst of polarisatie.
+            </p>
+          </div>
+          <div>
+            <h3 class="col-heading navy">Visie</h3>
+            <p class="navy">Een wereld waarin Facebook-gebruikers niet onbewust meegaan in misleidende informatie en complottheorieën, maar zelf de tools hebben om feiten van fictie te onderscheiden.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <!-- Webshop preview — navy card, slides under lime Missie/Visie above -->
+      <section class="section-navy card card-flush-top section-pad">
+        <div class="container text-center">
+          <h2 class="section-title white">Webshop</h2>
+          <div class="three-products">
+            <div class="product-item">
+              <img src="beeld/Merchandise/Sticker1.jpg" alt="Stickers">
+              <p class="white">Stickers</p>
+            </div>
+            <div class="product-item">
+              <img src="beeld/Merchandise/Mok1.jpg" alt="Mokken">
+              <p class="white">Mokken</p>
+            </div>
+            <div class="product-item">
+              <img src="beeld/Merchandise/Telefoonhoesje1.jpg" alt="Telefoonhoesjes">
+              <p class="white">Telefoonhoesjes</p>
+            </div>
+          </div>
+          <button type="button" class="btn-orange" onclick="openPage('merchendise', document.getElementById('tab-merchendise'))">Kopen</button> <!-- webshop -->
+        </div>
+      </section>
 
-
-
-		</p> 
-	</div>
-
-	<!-- Download-->	
-						<div id="extensie" class="tabcontent">
-							<h3>Web-extensie</h3>
-							<p>
-								De feit of fictie web-extensie zorgt ervoor dat je met alle rust gebruik kan maken van Facebook. Je hoeft niet bang te zijn dat je misleid wordt door en verdraaid wereldbeeld dat iemand heeft, je hoeft niet op je hoede te blijven bij het kijken van katten filmpjes. Nee je kijk met gemaakt je Facebook pagina’s en content. En als er een account of groep is wat complotten of duidelijke onwaarheden verspreid zal de web-extensie je een melding geven dat je extra kritisch moet zijn op de inhoud die je gaat zien of lezen.
-							</p> 
-
-							<button class="downloadbutton" >
-								<a href="FeitofFictieExtensie.zip" download="Feesboek.zip" class="downloaden">
-										Downloaden
-								</a> 
-							</button>
-							<p>
-								Gebruik Facebook zonder zorgen en word gewaarschuwd voor gevaarlijke en misleidende groepen en mensen.
-							</p> <br>
-							<div class="streeppaginagroen">
-							</div>
-
-							<br>
-						<div class="downloadinfo">
-							<h1 class="infotitel">Wat doet het?</h1>
-							<p>
-								De feit of fictie web-extensie zorgt ervoor dat je met alle rust gebruik kan maken van Facebook. Je hoeft niet bang te zijn dat je misleid wordt door en verdraaid wereldbeeld dat iemand heeft, je hoeft niet op je hoede te blijven bij het kijken van katten filmpjes. Nee je kijk met gemaakt je Facebook pagina’s en content. En als er een account of groep is wat complotten of duidelijke onwaarheden verspreid zal de web-extensie je een melding geven dat je extra kritisch moet zijn op de inhoud die je gaat zien of lezen. 
-							</p>
-							<h1 class="infotitel">Hoe werkt het?</h1>
-							<p>
-								De web extensie, scanned de woorden op je scherm. Het leest ze niet en het slaat uiteraard niks op. De extensie werkt op opvallen op de achtergrond en wordt alleen geactiveerd als die een van de woorden op de woordenlijst herkent. Dan komt de melding in beeld en wordt u gewaarschuwd. U kunt er zelf voor kiezen op de melding weg te klikken of om door verwezen te worden naar de feit of fictie website waar u nogmaals kan lezen waar u op moet letten. De melding gaat weer uit beeld als u hem sluit of weer op een pagina gaat waar er geen woorden van de lijst op staan.							</p>
-							<br>
-							<div class="streeppaginagroen">
-							</div>
-
-							<h1 class="infotitel">Installeren</h1>
-							<h1 class="infotitel">1.</h1>
-							<p>
-								Klik op de ‘Download’ knop en ga naar de downloads en op het .zip bestand.
-							</p>
-							<br>
-							<h1 class="infotitel">2.</h1>
-							<p>
-								Ga aar chrome://extensions/ . Klik op ‘uitgepakte extensie laden’ en selecteer het mapje van de extensie.
-							</p>
-							<br>
-							<h1 class="infotitel">3.</h1>
-							<p>
-								Zet ontwikkelaars modus aan.
-							</p>
-							<br>
-							<h1 class="infotitel">4.</h1>
-							<p>
-								Dat was het gebruik nu gerust Facebook zonder stress, en weet wanneer de melding in beeld komt dat je even extra kritisch moet kijken.							
-							</p>
-						</div>
-						</div>
+    </div><!-- end #home -->
 
 
-		<!-- Melden-->		
-		<div id="melden" class="tabcontent">
-			<h3>Melding maken</h3>
-			<p>
-				Heb je account/groepen gevonden die een gevaarlijk wereldbeeld en misleidende informatie verspreiden, meld het account hier. Na genoeg meldingen zijn en gecontroleerd wordt of het klopt, komt deze groep/account in os systeem, en zullen gebruikers gewaarschuwd worden als ze de pagina belanden. 	
-			</p>
-			<div class="streeppagina">
-			</div>
-				<p class="meldingsformulier">
-					Gegeves formulier
-					</p>
-					<form name="melden" action="https://script.google.com/macros/s/AKfycbwv9z4mQQhPgxu0maPINEWkB21dICv5LRWU78PCPlBrM3Oo6XeKBiFqDdPQPjPYaBY40w/exec" method="POST">
-						<label>Gebruikers/groepnaam: <br> <input name="gebruikersnaam" type="text" required></label><br><br>
-						<label>Link/URL van pagina: <br> <input name="link" type="text"></label><br><br>
-						<label>Leg uit waarom je deze groep of gebruiker vermeld:<br><textarea name="leguit">Hallo, deze gebruiker/groep verspreid misleidende informatie over...</textarea></label><br><br>
-						<label>Reden:<br> <select name="reden" class="reden">
-							<option value="-">  </option>
-							<option value="Verspreid nepnieuws">Verspreid nepnieuws</option>
-							<option value="Start een complot">Start een complot</option>
-							<option value="Versrpeit gevaarlijk wereldbeeld">Versrpeid gevaarlijk wereldbeeld</option>
-							<option value="verspreid complotten">verspreid complotten</option>
-							<option value="overig">overig</option>
-						  </select></label><br>
-						<p class="meldingsformulier">
-							Jouw gegevens
-							</p>
-						<label>Email-adress: <br> <input name="email-adress" type="text"></label><br><br>
-						<label><input type="reset" value="Gegevens wissen" class="formreset"></label><br>
-						<label><input type="submit" value="Gegevens versturen" class="formknop"></label>
-					</form>
-			
-			</div>
-					<!-- Merchendies -->
-	
-					<div id="merchendise" class="tabcontent">
-						<h3>Merchandise</h3>
-						<p>
-							Wil je deze campagne supporten, en het kritisch kijken delen met mensen om je heen.
-						</p> <br><br>
-						<div class="streeppagina">
-						</div>
-						<div class="merchgeheel">
-							<div class="merchonderdelen">
-								<p class="merchtitel">Stickers</p>
-								<img src="beeld/Merchendise/Sticker1.jpg" alt="headerlogo" class="merchbeeld">
-								<img src="beeld/Merchendise/Sticker2.jpg" alt="headerlogo" class="merchbeeld">
-							</div>
-							<div class="merchonderdelen">
-								<p class="merchtitel">Mok</p>
-								<img src="beeld/Merchendise/Mok1.jpg" alt="headerlogo" class="merchbeeld">
-								<img src="beeld/Merchendise/Mok2.jpg" alt="headerlogo" class="merchbeeld">
-							</div>
-							<div class="merchonderdelen">
-								<p class="merchtitel">Telefoon hoesje</p>
-								<img src="beeld/Merchendise/Telefoonhoesje1.jpg" alt="headerlogo" class="merchbeeld">
-								<img src="beeld/Merchendise/Telefoonhoesje2.jpg" alt="headerlogo" class="merchbeeld">
-							</div>
+    <!-- ===== INFORMATIE TAB ===== -->
+    <div id="informatie" class="tabcontent">
 
-						</div>
-					</div>	
-		
+      <section class="section-navy card section-pad-sm">
+        <div class="container text-center">
+          <h2 class="section-title white">Informatie</h2>
+        </div>
+      </section>
 
-				</div>
-			</main>
-				<footer>
-					<address>
-						<p class="footer">
-							Blijf kritisch, volg de feiten
-						</p>
-					</address>
-					</footer>
+      <section class="section-white section-pad">
+        <div class="container info-content">
+          <p class="navy">We leven in een tijd waarin het leven onrustig is en online niks meer te vertrouwen is. Wat is feit en wat is fictie. Wie kan je vertrouwen om de waarheid nog te zeggen. In de digitale wereld kom je niet voorbij algoritmes en filterbubbels, maar je kan jezelf er wel tegen beschermen. Wees niet naïef en informeer jezelf over alles wat met nep nieuws en complotten te maken heeft.</p>
+          <div class="divider-orange"></div>
+          <h3 class="section-title navy">Voor meer informatie over complottheorieën ga naar:</h3>
+          <div class="links-list">
+            <a href="https://www.mediawijsheid.nl/" class="info-link">Mediawijsheid.nl</a>
+            <a href="https://www.mediawijs.be/nl/dossiers/complotdenken" class="info-link">Mediawijs.be</a>
+            <a href="https://www.uva.nl/shared-content/faculteiten/nl/faculteit-der-geesteswetenschappen/nieuws/2022/06/de-wortels-van-de-complottheorie.html" class="info-link">Artikel Universiteit Amsterdam</a>
+            <a href="https://www.awbruna.nl/boek/non-fictie/jan-willem-van-prooijen/hoax/" class="info-link">Hoax, Jan-willem van Prooijen</a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end #informatie -->
 
 
-	</body>
+    <!-- ===== EXTENSIE TAB ===== -->
+    <div id="extensie" class="tabcontent">
+
+      <!-- Hero — navy card, sits on top of lime Waarom below -->
+      <section class="section-navy card card-over section-pad">
+        <div class="container">
+          <h2 class="section-title white text-center">Web extensie</h2>
+          <div class="hero-grid" style="margin-top:1.5rem;">
+            <div class="hero-text">
+              <h3 class="white" style="font-size:1.8rem; margin-bottom:0.6rem;">Gemakkelijk (en) kritisch</h3>
+              <p class="white-muted">Een makkelijk hulpmiddel om fictie snel te herkennen</p>
+              <div class="hero-cta">
+                <a type="button" href="FeitofFictieExtensie.zip" download="Feesboek.zip" class="btn-orange">Downloaden</a> 
+              </div>
+            </div>
+            <div class="hero-img">
+              <img src="beeld/Mockup/codescreen.png" alt="Extensie scherm">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Waarom — lime card, slides under navy hero above -->
+      <section class="section-lime card card-flush-top section-pad">
+        <div class="container hero-grid">
+          <div class="hero-img">
+            <img src="beeld/Mockup/karin2.jpg" alt="Waarom">
+          </div>
+          <div class="hero-text">
+            <h3 class="col-heading navy">Wanneer?</h3>
+            <p class="navy">De extensie zit in je Google Chrome browser. De extensie kan je gebruiken als je op Facebook bent en naar een account of groep gaat. Daar kan je de extensie-popup openen en klikken op de knop 'Controleren'. Dan gaat de extensie de laatste posts scannen, en door middel van een API met een instructie (identificeer de bron, analyseer de inhoud en bekijk de reacties) komt daar een analyse uit over de betrouwbaarheid van de Facebook-pagina.</p>
+            <button type="button" class="btn-orange" style="margin-top:1rem;" onclick="openPage('melden', document.getElementById('tab-melden'))">meer info</button> <!-- project -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Werking — plain white (no banner background) -->
+      <section class="section-white section-pad">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h3 class="col-heading navy">Werking van de extensie.</h3>
+            <p class="navy">De extensie werkt door middel van een API (Application Programming Interface). Een API is een verbinding tussen twee systemen, in dit geval stuurt de extensie de gescande tekst van Facebook door naar een AI, die daar vervolgens een analyse van maakt en dat antwoord terugstuurt naar de extensie.
+
+              Wanneer je op de knop 'Controleren' klikt, worden een aantal van de meest recente posts van de Facebook-pagina gescand. Die tekst wordt via de API doorgestuurd en beoordeeld aan de hand van een vaste instructie. Vervolgens verschijnt er direct in de extensie-popup een korte analyse over de betrouwbaarheid van de pagina.</p>
+          </div>
+          <div class="hero-img">
+            <img src="beeld/Mockup/codescreen.png" alt="Werking">
+          </div>
+        </div>
+      </section>
+
+      <!-- API analyse prompt — lime banner -->
+      <section class="section-lime card card-over section-pad">
+        <div class="container api-prompt">
+          <h2 class="section-title navy text-center">1 analyse in 4 stappen</h2>
+          <p class="api-intro navy">
+            De instructie prompt voor de API-analyse:<br>
+            Je bent De Scanner, een scherpe, licht sarcastische nepnieuws-detector ingebouwd in een browserextensie.
+            Je helpt gebruikers beoordelen of een Facebook-pagina te vertrouwen is. Reageer altijd in het Nederlands.
+            Jouw taak:
+          </p>
+
+          <div class="api-steps">
+            <article class="api-step-card">
+              <h3 class="api-step-number navy">1.</h3>
+              <div class="api-step-body">
+                <p class="navy">
+                  Identificeer de bron.<br>
+                  Kijk naar de URL en paginatitel. Is dit een betrouwbaar medium (NOS, RTL Nieuws, BBC, een overheidssite)?
+                  Een roddelblad? Een beroemdheid die bekendstaat om complottheorieën? Een anonieme activistenpagina?
+                  Noem de bron bij naam en laat dit zwaar wegen in je oordeel.
+                </p>
+              </div>
+            </article>
+
+            <article class="api-step-card">
+              <h3 class="api-step-number navy">2.</h3>
+              <div class="api-step-body">
+                <p class="navy">
+                  Analyseer de inhoud.<br>
+                  Let op rode vlaggen: sensationele of emotionele taal, vage claims als "dit willen ze niet dat je weet",
+                  niet-verifieerbare beweringen, gebrek aan bronvermelding, complotretoriek, of inhoud die woede/angst wil
+                  aanwakkeren in plaats van informeren.
+                </p>
+              </div>
+            </article>
+
+            <article class="api-step-card">
+              <h3 class="api-step-number navy">3.</h3>
+              <div class="api-step-body">
+                <p class="navy">
+                  Bekijk de reacties.<br>
+                  Zijn mensen aan het fact-checken, of versterken ze de verontwaardiging?
+                </p>
+              </div>
+            </article>
+
+            <article class="api-step-card">
+              <h3 class="api-step-number navy">4.</h3>
+              <div class="api-step-body">
+                <p class="navy">
+                  Geef een oordeel.<br>
+                  Geef een oordeel, precies een van deze vier labels, in hoofdletters, als allereerste woord van je antwoord:
+                  Betrouwbaar: betrouwbare, feitelijke bron zonder grote rode vlaggen.
+                  Goed opletten: deels betrouwbaar, maar ook sensationeel of bevooroordeeld.
+                  Niet te vertrouwen: serieuze rode vlaggen; wees kritisch.
+                  Gevaarlijk: bekende complotbron, bewuste desinformatie of volledig onverifieerbare claims.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <p class="api-outro navy">
+            Schrijf na het oordeel 2-3 bondige zinnen met je redenering. Noem de bron bij naam. Een droge opmerking is
+            welkom, maar blijf eerlijk en onderbouwd. Gebruik taal die begrijpelijk is voor Generatie X (45-60 jaar).
+            Geen opsommingen, geen koppen, geen markdown.
+          </p>
+        </div>
+      </section>
+
+      <!-- Geïnstalleerd in 4 stappen — navy banner -->
+      <section class="section-navy card card-flush-top section-pad">
+        <div class="container">
+          <h2 class="section-title white text-center">Geïnstalleerd in 4 stappen</h2>
+          <div class="install-step">
+            <div class="step-img">
+              <img src="beeld/Installeren/installeren1.png" alt="Downloaden">
+            </div>
+            <div class="step-text">
+              <h3 class="white">Downloaden</h3>
+              <p class="white-muted">Klik op de 'Download'-knop bovenaan deze pagina. Je krijgt een melding rechtsboven in je browser.</p>
+            </div>
+          </div>
+          <div class="install-step">
+            <div class="step-text">
+              <h3 class="white">Zip openen</h3>
+              <p class="white-muted">Ga naar je bestanden en dubbelklik op het .zip-mapje 'FeitoffictieExtensie.zip'. Dan opent het mapje met de extensie.</p>
+            </div>
+            <div class="step-img">
+              <img src="beeld/Installeren/installeren2.png" alt="Zip openen">
+            </div>
+          </div>
+          <div class="install-step">
+            <div class="step-img">
+              <img src="beeld/Installeren/installeren3.png" alt="Chrome extensie">
+            </div>
+            <div class="step-text">
+              <h3 class="white">Chrome extensie</h3>
+              <p class="white-muted">Ga naar 'chrome://extensions/' en zet de 'ontwikkelaarsmodus' aan (rechtsboven in beeld). Klik op 'Uitgepakte extensie laden'.</p>
+            </div>
+          </div>
+          <div class="install-step">
+            <div class="step-text">
+              <h3 class="white">Facebook gebruik</h3>
+              <p class="white-muted">Selecteer het uitgepakte mapje 'FeitoffictieExtensie' en klik het aan. De extensie verschijnt nu in je navigatiebalk en je kan hem daar vastpinnen.</p>
+            </div>
+            <div class="step-img">
+              <img src="beeld/Installeren/installeren4.png" alt="Facebook gebruik">
+            </div>
+          </div>
+          <div class="text-center" style="margin-top:2rem; display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <a href="mailto:Nadua.van.gorkum@gmail.com" class="btn-orange">extra hulp nodig?</a> <!-- email adress -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Stappen gedetailleerd — white -->
+      <section class="section-white section-pad">
+        <div class="container">
+          <h2 class="section-title navy text-center">Stappen gedetailleerd</h2>
+          <div class="steps-grid">
+            <div class="step-grid-item">
+              <img src="beeld/Installeren/installeren1.png" alt="Stap 1">
+              <p class="navy">1. Klik op de download knop.</p>
+            </div>
+            <div class="step-grid-item">
+              <img src="beeld/Installeren/installeren2.png" alt="Stap 2">
+              <p class="navy">2. Het .Zip bestand komt in je bestanden.</p>
+            </div>
+            <div class="step-grid-item">
+              <img src="beeld/Installeren/installeren3.png" alt="Stap 3">
+              <p class="navy">3. Open het .Zip bestand (dubbel klikken).</p>
+            </div>
+            <div class="step-grid-item">
+              <img src="beeld/Installeren/installeren4.png" alt="Stap 4">
+              <p class="navy">4. Ga naar chrome://extensions/ en zet ontwikkelaarsmodus aan.</p>
+            </div>
+            <div class="step-grid-item">
+              <img src="beeld/Installeren/installeren5.png" alt="Stap 5">
+              <p class="navy">5. Klik op uitgepakt extensie laden.</p>
+            </div>
+            <div class="step-grid-item">
+              <div class="orange-box step-ph"></div>
+              <p class="navy">6. Selecteer de 'Feit of Fictie Extensie' map.</p>
+            </div>
+            <div class="step-grid-item">
+              <div class="orange-box step-ph"></div>
+              <p class="navy">7. Open Facebook in je browser.</p>
+            </div>
+            <div class="step-grid-item">
+              <div class="orange-box step-ph"></div>
+              <p class="navy">8. Wil je een pagina scannen klik op het F/f ikoon.</p>
+            </div>
+            <div class="step-grid-item">
+              <div class="orange-box step-ph"></div>
+              <p class="navy">9. Klik op controleer en wacht de analyse af.</p>
+            </div>
+          </div>
+          <div class="text-center" style="margin-top:2rem;">
+            <a href="mailto:jouw@email.nl" class="btn-orange">extra hulp nodig?</a> <!-- email adress -->
+          </div>
+
+          <h2 class="section-title navy text-center" style="margin-top:2.4rem;">Stappen gedetailleerd video</h2>
+          <div class="video-wrap">
+            <div class="video-placeholder">
+              <span class="play-icon">&#9654;</span>
+            </div>
+          </div>
+          <p class="navy video-caption">Video uitleg. In deze video word het installeren van de web extensie in een schermopname uitgelegd.</p>
+        </div>
+      </section>
+
+    </div><!-- end #extensie -->
+
+
+    <!-- ===== PROJECT TAB ===== -->
+    <div id="melden" class="tabcontent">
+
+      <!-- Hero — navy card, sits on top of lime Missie/Visie below -->
+      <section class="section-navy card card-over section-pad">
+        <div class="container text-center">
+          <p class="small-label white">Project</p>
+          <h1 class="project-title white">Feit <span class="lime">of</span> fictie</h1>
+          <p class="project-slogan lime">Kijk kritisch, volg de feiten</p>
+          <p class="white-muted project-intro">Feit of Fictie is een campagne gericht op Generatie X (45–60 jaar) die Facebook gebruikt als belangrijkste nieuwsbron. Omdat Facebook geen content meer factcheckt en algoritmes gebruikers steeds dieper in filterbubbels trekken, is deze generatie extra kwetsbaar voor misleidende informatie en complottheorieën. Feit of Fictie biedt een laagdrempelige oplossing: een browser-extensie en de bijbehorende website. Het doel is niet om mensen van Facebook af te jagen, maar om ze met een beetje humor en een kritische blik bewuster te laten omgaan met wat ze dagelijks voorbij zien komen.</p>
+        </div>
+      </section>
+
+      <!-- Missie / Visie — lime card, slides under navy hero above -->
+      <section class="section-lime card card-flush-top section-pad">
+        <div class="container two-col">
+          <div>
+            <h3 class="col-heading navy">Missie</h3>
+            <p class="navy">Generatie X helpen kritisch te kijken naar de betrouwbaarheid van content op Facebook, op een laagdrempelige en toegankelijke manier, zonder angst of polarisatie.
+            </p>
+          </div>
+          <div>
+            <h3 class="col-heading navy">Visie</h3>
+            <p class="navy">Een wereld waarin Facebook-gebruikers niet onbewust meegaan in misleidende informatie en complottheorieën, maar zelf de tools hebben om feiten van fictie te onderscheiden.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact — white -->
+      <section class="section-white section-pad">
+        <div class="container text-center">
+          <h2 class="section-title navy">Contact</h2>
+          <div class="four-contact">
+            <div class="contact-item">
+              <div class="orange-box orange-box--icon">
+                <img src="beeld/Socials/facebook.png" alt="Facebook" width="120" height="120" class="orange-box__img">
+              </div>
+              <p class="navy">Facebook</p>
+            </div>
+            <div class="contact-item">
+              <div class="orange-box orange-box--icon">
+                <img src="beeld/Socials/reddit.png" alt="Reddit" width="120" height="120" class="orange-box__img">
+              </div>
+              <p class="navy">Reddit</p>
+            </div>
+            <div class="contact-item">
+              <div class="orange-box orange-box--icon">
+                <img src="beeld/Socials/instagram.png" alt="Instagram" width="120" height="120" class="orange-box__img">
+              </div>
+              <p class="navy">Insta</p>
+            </div>
+            <div class="contact-item">
+              <div class="orange-box orange-box--icon">
+                <img src="beeld/Socials/mail.png" alt="Email" width="120" height="120" class="orange-box__img">
+              </div>
+              <p class="navy">email adres</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stakeholders — navy card, sits on top of lime Personal below -->
+      <section class="section-navy card card-over section-pad">
+        <div class="container">
+          <h2 class="section-title white text-center">Stakeholders</h2>
+          <div class="stakeholder-row">
+            <div class="stakeholder-logo">
+              <img src="beeld/Stakeholders/Facebook.svg.png" alt="Facebook">
+            </div>
+            <div class="stakeholder-text">
+              <h3 class="white">Facebook</h3>
+              <p class="white-muted">Hoe de extensie werkt en informatie erover, doelstelling extensie</p>
+            </div>
+          </div>
+          <div class="stakeholder-row row-reverse">
+            <div class="stakeholder-text">
+              <h3 class="white">Mediawijs</h3>
+              <p class="white-muted">Hoe de extensie werkt en informatie erover, doelstelling extensie</p>
+            </div>
+            <div class="stakeholder-logo">
+              <img src="beeld/Stakeholders/mediawijs.png" alt="Mediawijs">
+            </div>
+          </div>
+          <div class="stakeholder-row">
+            <div class="stakeholder-logo">
+              <img src="beeld/Stakeholders/Rijksoverheid.jpg" alt="Rijksoverheid">
+            </div>
+            <div class="stakeholder-text">
+              <h3 class="white">Rijksoverheid</h3>
+              <p class="white-muted">Hoe de extensie werkt en informatie erover, doelstelling extensie</p>
+            </div>
+          </div>
+          <div class="stakeholder-row row-reverse">
+            <div class="stakeholder-text">
+              <h3 class="white">Bibliotheek</h3>
+              <p class="white-muted">Hoe de extensie werkt en informatie erover, doelstelling extensie</p>
+            </div>
+            <div class="stakeholder-logo">
+              <img src="beeld/Stakeholders/Bibliotheek.png" alt="de Bibliotheek">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal intro — lime card, slides under navy Stakeholders above -->
+      <section class="section-lime card card-flush-top section-pad">
+        <div class="container hero-grid">
+          <div class="hero-img">
+            <img src="beeld/Mockup/fotomij.jpg" alt="Nadua">
+          </div>
+          <div class="hero-text">
+            <h3 class="col-heading navy">Aangenaam,</h3>
+            <p class="navy">Mijn naam is Nadua, en Feit of fictie is mijn afstudeer project.</p>
+            <a href="mailto:Nadua.van.gorkum@gmail.com" class="btn-orange" style="margin-top:1rem; display:inline-block;">Contact</a> <!-- email adress -->
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end #melden -->
+
+
+    <!-- ===== WEBSHOP TAB ===== -->
+    <div id="merchendise" class="tabcontent">
+
+      <!-- Hero — navy card -->
+      <section class="section-navy card section-pad">
+        <div class="container text-center">
+          <h2 class="section-title white">Webshop</h2>
+          <h3 class="col-heading lime" style="margin-bottom:0.8rem;">Help ook mee</h3>
+          <p class="white-muted shop-intro">Draag deze merchandisa om de campagne door te zetten. Inspireer je omgeving om kritisch te kijken naar de informatie die ze online tegen komen. Blijf op je mobile en in je koffie pauze ook kritisch.</p>
+        </div>
+      </section>
+
+      <!-- Stickers — white -->
+      <section class="section-white section-pad">
+        <div class="container">
+          <h2 class="section-title navy text-center">Stickers</h2>
+          <div class="merch-row">
+            <div class="merch-images">
+              <img src="beeld/Merchandise/Sticker1.jpg" alt="Sticker 1">
+              <img src="beeld/Merchandise/Sticker2.jpg" alt="Sticker 2">
+            </div>
+            <div class="merch-text">
+              <p class="navy">Blijf tijdens je koffie pauze ook scherp/kritisch door de feit of fictie mok. Inspireer je collega dit ook te doen.</p>
+              <button class="btn-lime">Kopen</button> <!-- nowhere -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mokken — white -->
+      <section class="section-white section-pad">
+        <div class="container">
+          <h2 class="section-title navy text-center">Mokken</h2>
+          <div class="merch-row">
+            <div class="merch-images">
+              <img src="beeld/Merchandise/Mok1.jpg" alt="Mok 1">
+              <img src="beeld/Merchandise/Mok2.jpg" alt="Mok 2">
+            </div>
+            <div class="merch-text">
+              <p class="navy">Kom je opstraat een sticker tegen die onbetrouwbare informatie verspreid. Herinneren mensen om ook hier kritisch naar te kijken. Of plak de sticker overal waar jij hem wilt, om de campagne te promoten.</p>
+              <button class="btn-lime">Kopen</button> <!-- nowhere -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Telefoonhoesje — white -->
+      <section class="section-white section-pad">
+        <div class="container">
+          <h2 class="section-title navy text-center">Telefoon hoesje</h2>
+          <div class="merch-row">
+            <div class="merch-images">
+              <img src="beeld/Merchandise/Telefoonhoesje1.jpg" alt="Telefoonhoesje 1">
+              <img src="beeld/Merchandise/Telefoonhoesje2.jpg" alt="Telefoonhoesje 2">
+            </div>
+            <div class="merch-text">
+              <p class="navy">Gebruik je Facebook ook regelmatig op je telefoon? Dan is het Feit of fictie telefoonhoesje perfect voor jou. Ook in de mobile app blijf je kritisch denken.</p>
+              <button class="btn-lime">Kopen</button> <!-- nowhere -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collage — lime card -->
+      <section class="section-lime card section-pad">
+        <div class="container text-center">
+          <h2 class="section-title navy">Collage</h2>
+          <div class="collage-grid">
+            <img src="beeld/Merchandise/Sticker1.jpg" alt="Collage 1">
+            <img src="beeld/Merchandise/Mok1.jpg" alt="Collage 2">
+            <img src="beeld/Merchandise/Telefoonhoesje1.jpg" alt="Collage 3">
+            <img src="beeld/Merchandise/Sticker2.jpg" alt="Collage 4">
+            <img src="beeld/Merchandise/Mok2.jpg" alt="Collage 5">
+            <img src="beeld/Merchandise/Telefoonhoesje2.jpg" alt="Collage 6">
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end #merchendise -->
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="beeld/Logos/logoonderelkaar.png" alt="Feit of fictie" class="footer-logo">
+        <p class="footer-slogan">Kijk kritisch,<br>volg de feiten</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <a >Contact</a>
+          <a href="mailto:Nadua.van.gorkum@gmail.com" >Email</a>
+          <a href="https://www.facebook.com/groups/965096363020525">Facebook-groep</a>
+          <a href="#">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <a type="button" onclick="openPage('melden', document.getElementById('tab-melden'))">Project</a>
+          <a type="button" onclick="openPage('informatie', document.getElementById('tab-informatie'))">Informatie</a>
+          <a type="button" onclick="openPage('extensie', document.getElementById('tab-extensie'))">Extensie</a>
+          <a type="button" onclick="openPage('merchendise', document.getElementById('tab-merchendise'))">Webshop</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>
-
 
