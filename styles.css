@@ -1,355 +1,816 @@
-/*  BASISSTIJLEN  */
+/* ===================================
+   COLOR TOKENS  (exact from palette)
+   --navy:   rgb(36, 52, 109)   #24346D
+   --navy2:  rgb(38, 75, 154)   #264B9A
+   --blue:   rgb(105,172,223)   #69ACDF
+   --lime-d: rgb(140,168, 29)   #8CA81D
+   --lime:   rgb(200,207, 12)   #C8CF0C
+   --lime-l: rgb(221,222, 62)   #DDDE3E
+   --cream:  rgb(241,241,202)   #F1F1CA
+   --orange: rgb(234,119, 21)   #EA7715
+   --orange2:rgb(244,151, 37)   #F49725
+=================================== */
+
+/* ===================================
+   RESET & BASE
+=================================== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-padding-top: var(--header-height, 4.5rem);
+}
+
+:root {
+  /* Must match visual height of fixed header (nav bar) */
+  --header-height: 0rem;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: "avenir-next-lt-pro", sans-serif;
-  font-weight: 80;
-  font-style: normal;
+  font-weight: 400;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+
 }
 
-header{
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===================================
+   CONTAINER
+=================================== */
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 2rem;
   width: 100%;
 }
 
+/* ===================================
+   SECTION BACKGROUNDS
+=================================== */
+.section-white { background-color: #ffffff; }
+.section-navy  { background-color: #24346D; }
+.section-lime  { background-color: #C8CF0C; }
 
-.top{
-  display: flex;
-justify-content: space-around;
-align-items: center;
+/* Rounded card — add alongside section-navy / section-lime */
+.card {
+  border-radius: 2vw;
+  margin-top:   1.5rem;
+  margin-bottom: 0;
+  overflow: hidden;
 }
 
-main{
-  width: 80%;
-  display: flex;
-  align-self: center;
+/* Slides up behind the previous card, filling the white corner gaps */
+.card-flush-top {
+  margin-top: -3vw;          /* pull up by exactly the card border-radius */
+  padding-top: 3vw;          /* push content back down so it stays visible */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: relative;
+  z-index: 0;
+}
+
+/* When a flush card also has section-pad, restore the full top padding */
+.card-flush-top.section-pad {
+  padding-top: calc(3rem + 3vw);
+}
+
+/* Card that sits visually on top of a card-flush-top below it */
+.card-over {
+  position: relative;
+  z-index: 1;
+}
+
+/* First banner in each tab: flush under fixed header — no gap, no rounded top */
+.tabcontent > .card:first-child {
+  padding-top: 4.2rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 
-h1{
-    /*background-color: #14580C;*/
-    color: rgb(0, 0, 0);
-    font-size: 50px;
-    font-family: "gravita-geo-variable", sans-serif;
-    display: flex;
-    justify-content: center;
-}
+.section-pad    { padding: 3rem 0; }
+.section-pad-sm { padding: 1.6rem 0; }
 
+/* ===================================
+   COLOUR UTILITY CLASSES
+=================================== */
+.navy       { color: #24346D; }
+.white      { color: #ffffff; }
+.lime       { color: #c8cf0c; }
+.white-muted{ color: rgba(255,255,255,0.82); }
+.text-center{ text-align: center; }
 
-.titel{
-  color: rgb(255, 255, 255);
-  margin: 1vw;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  width: 20vw;
-}
+/* ===================================
+   TYPOGRAPHY
+=================================== */
 
-.onderkop{
-  font-size: 2.5vw;
-  margin-top: 0px;
-}
-
-
-h3 {
+/* Titles — Gravita GEO Bold */
+h1 {
   font-family: "gravita-geo-variable", sans-serif;
-  font-size: 4vw;
-  color: rgb(0, 0, 225);
+  font-variation-settings: "wght" 709.5238;
+  line-height: 1.1;
 }
 
-p{
-font-size: 1.3vw;
-font-family: "avenir-ne t-lt-pro", sans-serif;
-font-weight: 80;
-font-style: normal;
-
+/* Headers — Gravita GEO Medium */
+h2, h3 {
+  font-family: "gravita-geo-variable", sans-serif;
+  font-variation-settings: "wght" 519.04762;
+  line-height: 1.15;
 }
 
-.slogan{
-  font-style: italic;
-padding-left: 10%;
-text-align: start;
-font-size: 190%;
+/* Paragraphs — Avenir Next Medium */
+p, a, span, label, button {
+  font-family: "avenir-next-lt-pro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
+p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
 
-/* menu balk*/
-.menu{
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.col-heading {
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+}
+
+/* ===================================
+   HEADER / NAVBAR
+=================================== */
+header {
+  background-color: #24346D;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  border-bottom-left-radius: 2vw;
+  border-bottom-right-radius: 2vw;
+  /* Light shadow only — keeps navy seamless with first banner below */
+}
+
+.top {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.nav-logo {
+  flex-shrink: 0;
+}
+
+.nav-logo img {
+  height: 46px;
+  width: auto;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+/* ===================================
+   TAB BUTTONS
+=================================== */
+.tabmenu {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  flex-wrap: wrap;
 }
 
 .tablink {
-  background-color: rgb(255, 255, 255);
-  color: rgb(255, 138, 30);
+  background-color: transparent;
+  color: #ffffff;
   font-family: "gravita-geo-variable", sans-serif;
-  font-variation-settings: "wght" 700;
-  font-size: 1.6vw;
-  text-align: center;
-  font-weight: 700;
+  font-variation-settings: "wght" 519.04762;
+  font-size: 1.3rem;
   border: none;
-  outline: none;
   cursor: pointer;
-  padding: 1% 1%;
-  border-radius: 8px;
-  margin: 0.2em;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
 .tablink:hover {
-  box-shadow: 6px 6px rgb(181, 248, 0);
-  transform: scale(1.03);
-  padding: 1%;
+  background-color: rgba(255,255,255,0.13);
 }
 
 .tablink.active {
-  color: rgb(284, 108, 0);
+  color: #C8CF0C;
+}
+
+.herken-btn {
+  background-color: #C8CF0C;
+  color: #24346D;
+  font-family: "gravita-geo-variable", sans-serif;
+  font-variation-settings: "wght" 709.5238;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1.4rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: background-color 0.18s ease;
+}
+
+.herken-btn:hover { background-color: #b5bb0a; }
+
+/* ===================================
+   MAIN & TAB CONTENT
+=================================== */
+main {
+  flex: 1;
+  width: 100%;
+  /* Offset content so it sits below fixed header */
+  padding-top: var(--header-height);
 }
 
 .tabcontent {
-  color: rgb(0, 0, 0);
   display: none;
   width: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  font-size: 1.3vw;
 }
 
-.tabmenu {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-around;
-  gap: 0.5em;
-  margin: 1em auto;
-  padding: 0.5em 0;
-  width: 100%;
-}
-
-.select {
+/* ===================================
+   BUTTONS
+=================================== */
+.btn-orange,
+.btn-navy,
+.btn-lime {
+  border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-.select:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(1.03);
+  border-radius: 8px;
+  font-family: "gravita-geo-variable", sans-serif;
+  font-variation-settings: "wght" 709.5238;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.6rem;
+  transition: background-color 0.18s ease, transform 0.1s ease;
+  display: inline-block;
 }
 
-#streepheader{
-background-color: rgb(181, 248, 0);
-  width: 100%;
-height: 0.5vw;
-}
+.btn-orange { background-color: #EA7715; color: #ffffff; }
+.btn-navy   { background-color: #24346D; color: #ffffff; }
+.btn-lime   { background-color: #C8CF0C; color: #24346D; }
 
-.streeppagina{
-  background-color: rgb(255, 138, 30);
-  width: 50%;
-  height: 0.3vw;
-  display: flex;
-  justify-self: center;
-  }
+.btn-orange:hover  { background-color: #d06410; }
+.btn-navy:hover    { background-color: #1a2858; }
+.btn-lime:hover    { background-color: #b5bb0a; }
 
-  .streeppaginagroen{
-    background-color: rgb(181, 248, 0);
-    width: 50%;
-    height: 0.3vw;
-    display: flex;
-    justify-self: center;
-  }
-
-.uitleg{
-  font-size: 90%;
-  text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 5%;
-}
-
-figure{
-    display: flex;
-    flex-direction: column;
-}
-
-img{
-    width: 100%;
-    border-radius: 8px;
-}
-
-.footer{
-  display: block;
-  font-style: italic;
-  unicode-bidi: isolate;
-  font-size: 70%;
-  margin-top: 5%;
-  margin-bottom: 10%;
-  text-align: center;
-}
-
-/* overig */
-.downloadbutton{
-  border-radius: 1vw;
-  background-color: rgb(0, 0, 225);
-  color: rgb(255, 255, 255);
-  border: 0px;
-  font-size: 3vw;
-  padding: 2vw;
-  margin-top: 2vw;
-  margin-bottom: 5vw;
-  cursor: pointer;
-  box-shadow: 4px 8px rgb(255, 138, 30);
-}
-
-.downloaden{
-  color: rgb(255, 255, 255);
+/* Buttons styled as <a> (e.g. mailto) */
+a.btn-orange,
+a.btn-navy,
+a.btn-lime {
   text-decoration: none;
 }
 
-#extensie{
-  margin-left: 5%;
-  margin-right: 5%;
-
+a.btn-orange:hover,
+a.btn-navy:hover,
+a.btn-lime:hover {
+  text-decoration: none;
 }
 
-input{
-  width: 30vw;
-  height: 3vw;
-  border-radius: 0.7vw;
-  border: 0.3vw solid rgb(181, 248, 0);
+.btn-orange:active,
+.btn-navy:active,
+.btn-lime:active   { transform: scale(0.97); }
+
+/* ===================================
+   ORANGE PLACEHOLDER BOX
+=================================== */
+.orange-box {
+  background-color: #EA7715;
+  width: 100%;
+  padding-bottom: 90%;   /* near-square */
+  border-radius: 14px;
+  margin-bottom: 0.5rem;
 }
 
-
-.reden{
-  width: 30vw;
-  height: 3vw;
-  border-radius: 0.7vw;
-  border-color: rgb(181, 248, 0);
-  border-width: 0.3vw;
-}
-
-
-
-form{
-  font-size: 1.3vw;
-font-family: "avenir-next-lt-pro", sans-serif;
-font-weight: 600;
-}
-
-.formknop{
-  background-color: rgb(0, 0, 225);
-  color: rgb(255, 255, 255);
-  border: 0px;
-  cursor: pointer;
-  box-shadow: 4px 8px rgb(255, 138, 30);
-  font-size: 1.5vw;
-  font-family: "avenir-next-lt-pro", sans-serif;
-  font-weight: 600;
-  width: 20vw;
-}
-
-.formreset{
-  color: rgb(284, 108, 0);
-  cursor: pointer;
-  font-size: 1.5vw;
-  font-family: "avenir-next-lt-pro", sans-serif;
-  font-weight: 600;
-  border: none;
-  background-color: rgb(255, 255, 255);
-}
-
-.meldingsformulier{
-  font-size: 2vw;
-font-weight: 600;
-color: rgb(0, 0, 225);
-  font-family: "gravita-geo-variable", sans-serif;
+/* Web extensie — three pictograms inside orange tiles */
+.orange-box--icon {
+  padding-bottom: 0;
+  aspect-ratio: 1 / 1;
+  max-height: 220px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-justify-content: center;
-flex-direction: column;
-margin-bottom: 0.4vw;
-text-align: center;
-}
-
-textarea{
-  width: 30vw;
-  height: 10vw;
-  border-radius: 0.7vw;
-  border-color: rgb(181, 248, 0);
-  border-width: 0.3vw;
-}
-
-.merchgeheel{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.merchonderdelen{
-  display: flex;
-  flex-direction: column;
-  margin: 2vw;
-  width: 33%;
-}
-
-  .merchbeeld{
-  border-radius: 1.5vw;
-  cursor: pointer;
-  border: 0.3vw solid rgb(181, 248, 0);
-  margin-bottom: 2vw;
-}
-
-.merchtitel{
-  font-size: 2vw;
-  font-weight: 600;
-  color: rgb(0, 0, 225);
-    font-family: "gravita-geo-variable", sans-serif;
-}
-
-.infokop{
-  font-size: 2vw;
-  font-weight: 600;
-  color: rgb(0, 0, 225);
-  font-family: "gravita-geo-variable", sans-serif;
-  margin-bottom: 1vw;
-}
-
-.infotitel{
-  display: flex;
-  justify-content: flex-start;
-  font-size: 2vw;
-  font-weight: 600;
-  color: rgb(0, 0, 225);
-  font-family: "gravita-geo-variable", sans-serif;
-  margin-bottom: 1vw;
-}
-
-.downloadinfo{
-  text-align: left;
-}
-
-.herkenlijst{
-  text-align: left;
-  display: flex;
+  align-items: center;
   justify-content: center;
+  padding: clamp(0.75rem, 12%, 1.75rem); /* breathing room inside the orange */
+  box-sizing: border-box;
+}
+
+.orange-box__img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===================================
+   HERO GRID  (2 equal columns)
+=================================== */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-img img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.hero-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.hint-light {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.58);
+}
+
+.small-label {
+  font-size: 0.85rem;
+  font-family: "gravita-geo-variable", sans-serif;
+  font-variation-settings: "wght" 709.5238;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* ===================================
+   LIME BANNER  (Home)
+=================================== */
+.banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.2rem 2rem;
+}
+
+.brand-name {
+  font-size: 3rem;
+  text-align: right;
+  line-height: 1;
+}
+
+/* ===================================
+   BOX GRIDS
+=================================== */
+.three-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0 auto 2rem;
+  max-width: 640px;
+}
+
+.four-boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.box-item { text-align: center; }
+
+.box-item p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+/* ===================================
+   WEBSHOP PREVIEW  (Home)
+=================================== */
+.three-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-item { text-align: center; }
+
+.product-item img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.product-item p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ===================================
+   TWO COLUMN
+=================================== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* ===================================
+   INSTALL STEPS  (alternating)
+=================================== */
+.install-step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Odd steps: image left, text right  →  no extra class needed (natural order)   */
+/* Even steps: text left, image right →  order is reversed in HTML manually      */
+
+.step-img img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.step-text h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+/* ===================================
+   STEPS GRID  (3 × 3 screenshots)
+=================================== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.step-grid-item { text-align: left; }
+
+.step-grid-item img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+/* placeholder box inside step grid */
+.step-ph {
+  padding-bottom: 68%;
+  margin-bottom: 0;
+  border-radius: 10px;
+}
+
+.step-grid-item p {
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+/* ===================================
+   API PROMPT SECTION (Extensie)
+=================================== */
+.api-prompt {
+  max-width: 1180px;
+}
+
+.api-intro {
+  border: 0;
+  border-radius: 0;
+  padding: 0.9rem 1rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+}
+
+.api-steps {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 0.62fr 1.22fr;
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+  align-items: start;
+}
+
+.api-step-card {
+  display: flex;
   flex-direction: column;
-  margin-left: 24vw;
+  gap: 0.5rem;
 }
 
-ul{
-  margin-top: 0px;
-  margin-bottom: 1vw;
+.api-step-number {
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 1;
 }
 
-.onderonderkop{
-  color: rgb(284, 108, 0);
-  font-weight: 700;
+.api-step-body {
+  background-color: #F1F1CA;
+  border-radius: 16px;
+  padding: 0.85rem 0.85rem;
+  min-height: 0;
 }
 
-.homekop{
-  margin-bottom: 0px;
+.api-step-body p {
+  font-size: 0.82rem;
+  line-height: 1.32;
+  margin: 0;
 }
+
+.api-outro {
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* ===================================
+   VIDEO SECTION
+=================================== */
+.video-wrap {
+  max-width: 680px;
+  margin: 1.5rem auto 0;
+}
+
+.video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #24346D;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  color: #C8CF0C;
+  font-size: 4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.video-caption {
+  font-size: 0.88rem;
+  margin-top: 1rem;
+  text-align: left;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===================================
+   STAKEHOLDERS
+=================================== */
+.stakeholder-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  align-items: center;
+  background-color: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.row-reverse {
+  grid-template-columns: 1fr 220px;
+}
+
+.stakeholder-logo {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.stakeholder-logo img {
+  max-width: 150px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.stakeholder-text h3 { font-size: 1.15rem; margin-bottom: 0.35rem; }
+
+/* ===================================
+   PROJECT HERO
+=================================== */
+.project-title {
+  font-size: 5rem;
+  line-height: 1;
+  margin: 0.3rem 0;
+}
+
+.project-slogan {
+  font-size: 1.3rem;
+  font-family: "gravita-geo-variable", sans-serif;
+  font-variation-settings: "wght" 519.04762;
+  margin-bottom: 1.2rem;
+}
+
+.project-intro {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+/* ===================================
+   CONTACT  (4 orange boxes)
+=================================== */
+.four-contact {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 520px;
+}
+
+.contact-item { text-align: center; }
+
+.contact-item p {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ===================================
+   WEBSHOP MERCH ROWS
+=================================== */
+.shop-intro {
+  max-width: 580px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+.merch-row {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.merch-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.merch-images img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border: 3px solid #C8CF0C;
+}
+
+.merch-text p { margin-bottom: 1.5rem; }
+
+/* ===================================
+   COLLAGE GRID
+=================================== */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.collage-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===================================
+   INFORMATIE PAGE
+=================================== */
+.divider-orange {
+  background-color: #EA7715;
+  width: 35%;
+  height: 3px;
+  margin: 2rem auto;
+  border-radius: 2px;
+}
+
+.info-content { text-align: center; }
+
+.info-content > p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.info-link {
+  color: #EA7715;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.info-link:hover { text-decoration: underline; }
+
+/* ===================================
+   FOOTER
+=================================== */
+.site-footer {
+  background-color: #ffffff;
+  padding: 1.4rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 5.5rem;
+  max-width: min(100%, 14rem);
+  object-fit: contain;
+  margin: 0;
+}
+
+.footer-slogan {
+  color: #24346d;
+  font-size: 0.85rem;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-col a {
+  color: #C8CF0C;
+  text-decoration: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.footer-col a:hover { text-decoration: underline; }
