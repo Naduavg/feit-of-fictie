@@ -564,11 +564,14 @@ a.btn-lime:hover {
 =================================== */
 .video-wrap {
   max-width: 680px;
+  width: 100%;
   margin: 1.5rem auto 0;
+  overflow: hidden;
 }
 
 .video-player {
   width: 100%;
+  max-width: 680px;
   aspect-ratio: 16 / 9;
   border-radius: 16px;
   background-color: #24346D;
@@ -826,3 +829,120 @@ a.btn-lime:hover {
 }
 
 .footer-col a:hover { text-decoration: underline; }
+
+/* ===================================
+   RESPONSIVE — TABLET  (≤ 768px)
+=================================== */
+@media (max-width: 768px) {
+
+  /* --- Navigation: logo left, tabs right on same row --- */
+  .top {
+    flex-wrap: nowrap;
+    padding: 0.6rem 1rem;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .nav-logo { flex-shrink: 0; }
+  .nav-logo img { height: 34px; }
+  .tabmenu {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .tablink { font-size: 1.15rem; padding: 0.35rem 0.65rem; }
+  .herken-btn { display: none; }
+
+  /* --- Container --- */
+  .container { padding: 0 1rem; }
+
+  /* --- Section padding --- */
+  .section-pad    { padding: 2rem 0; }
+  .section-pad-sm { padding: 1.2rem 0; }
+
+  /* --- Typography --- */
+  .section-title  { font-size: 1.6rem; }
+  .hero-text h2   { font-size: 1.75rem; }
+  .project-title  { font-size: 3rem; }
+  .brand-name     { font-size: 2rem; text-align: left; }
+
+  /* --- All 2-column grids → single column --- */
+  .hero-grid,
+  .two-col,
+  .banner-grid,
+  .merch-row { grid-template-columns: 1fr; }
+
+  /* banner-grid: tighter padding, text before brand name */
+  .banner-grid { padding: 1.5rem 1rem; }
+
+  /* --- Install steps → stack, image always on top --- */
+  .install-step {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+  }
+  .install-step .step-img { order: 1; }
+  .install-step .step-text { order: 2; }
+
+  /* --- Steps grid → 2 columns --- */
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- API steps → single column --- */
+  .api-steps { grid-template-columns: 1fr; }
+
+  /* --- 3 / 4 product + contact grids → 2 columns --- */
+  .four-boxes     { grid-template-columns: repeat(2, 1fr); }
+  .three-products { grid-template-columns: repeat(2, 1fr); }
+  .four-contact   { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- Collage → 2 columns --- */
+  .collage-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- Stakeholder rows → single column, logo always on top --- */
+  .stakeholder-row,
+  .stakeholder-row.row-reverse {
+    grid-template-columns: 1fr;
+  }
+  .stakeholder-row .stakeholder-logo  { order: 1; }
+  .stakeholder-row .stakeholder-text  { order: 2; }
+
+  /* --- Footer → brand left, links right --- */
+  .footer-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+  .footer-brand { flex-shrink: 0; max-width: 55%; }
+  .footer-logo  { max-height: 4rem; }
+  .footer-links { gap: 1.2rem; flex-shrink: 0; }
+}
+
+/* ===================================
+   RESPONSIVE — MOBILE  (≤ 480px)
+=================================== */
+@media (max-width: 480px) {
+
+  /* --- Navigation: slightly smaller on very small screens --- */
+  .tablink { font-size: 1rem; padding: 0.3rem 0.5rem; }
+
+  /* --- Typography --- */
+  .project-title { font-size: 2.2rem; }
+  .brand-name    { font-size: 1.6rem; }
+  .hero-text h2  { font-size: 1.5rem; }
+
+  /* --- Steps grid → single column --- */
+  .steps-grid { grid-template-columns: 1fr; }
+
+  /* --- API steps → single column --- */
+  .api-steps { grid-template-columns: 1fr; }
+
+  /* --- Products / contact → single column --- */
+  .three-products { grid-template-columns: 1fr; }
+
+  /* --- Card border-radius: softer on small screens --- */
+  .card { border-radius: 4vw; }
+
+  /* --- Orange icon boxes: slightly smaller max-height --- */
+  .orange-box--icon { max-height: 160px; }
+}
