@@ -567,6 +567,14 @@ a.btn-lime:hover {
   margin: 1.5rem auto 0;
 }
 
+.video-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background-color: #24346D;
+  display: block;
+}
+
 .video-placeholder {
   width: 100%;
   aspect-ratio: 16 / 9;
