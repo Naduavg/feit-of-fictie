@@ -246,8 +246,12 @@ main {
 }
 
 .tabcontent {
-  display: none;
   width: 100%;
+}
+
+/* Fallback for environments where JS doesn't run immediately */
+#home {
+  display: block;
 }
 
 /* ===================================
