@@ -1134,17 +1134,17 @@ a.btn-lime:hover {
   .stakeholder-row .stakeholder-logo  { order: 1; }
   .stakeholder-row .stakeholder-text  { order: 2; }
 
-  /* --- Footer → brand left, links right --- */
+  /* --- Footer → brand only; link columns hidden (desktop keeps them) --- */
+  .footer-links { display: none; }
   .footer-inner {
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
-  .footer-brand { flex-shrink: 0; max-width: 55%; }
+  .footer-brand { flex-shrink: 0; max-width: none; }
   .footer-logo  { max-height: 4rem; }
-  .footer-links { gap: 1.2rem; flex-shrink: 0; }
 }
 
 /* ===================================
