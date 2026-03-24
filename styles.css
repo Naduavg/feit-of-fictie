@@ -165,6 +165,7 @@ header {
   border-bottom-left-radius: 2vw;
   border-bottom-right-radius: 2vw;
   /* Light shadow only — keeps navy seamless with first banner below */
+  overflow: visible;
 }
 
 .top {
@@ -175,6 +176,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   gap: 1rem;
+  overflow: visible;
 }
 
 .nav-logo {
@@ -220,20 +222,80 @@ header {
 }
 
 .herken-btn {
-  background-color: #C8CF0C;
-  color: #24346D;
+  background-color: #EA7715;
+  color: #ffffff;
   font-family: "gravita-geo-variable", sans-serif;
   font-variation-settings: "wght" 709.5238;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   border: none;
   cursor: pointer;
-  padding: 0.5rem 1.4rem;
+  padding: 0.2rem 1.4rem;
   border-radius: 6px;
   flex-shrink: 0;
   transition: background-color 0.18s ease;
 }
 
-.herken-btn:hover { background-color: #b5bb0a; }
+.herken-btn:hover { background-color: #d06410; }
+
+.herken-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.herken-popup {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  bottom: auto;
+  right: 0;
+  width: 230px;
+  background-color: #EA7715;
+  border-radius: 10px;
+  padding: 0.55rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  display: none;
+  z-index: 500;
+}
+
+.herken-popup.is-open {
+  display: block;
+}
+
+.herken-close {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.8rem;
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.herken-popup h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: right;
+  margin-bottom: 0.35rem;
+}
+
+.herken-inner {
+  background-color: #F49725;
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+}
+
+.herken-inner ol {
+  margin: 0;
+  padding-left: 0.95rem;
+}
+
+.herken-inner li {
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
 
 /* ===================================
    MAIN & TAB CONTENT
@@ -769,6 +831,133 @@ a.btn-lime:hover {
 .info-link:hover { text-decoration: underline; }
 
 /* ===================================
+   INFORMATIE PAGE (new design)
+=================================== */
+.info-hero {
+  text-align: center;
+}
+
+.info-hero p {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  margin-bottom: 2.2rem;
+}
+
+.info-card {
+  background-color: #C8CF0C;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.info-card p + p {
+  margin-top: 0.8rem;
+}
+
+.info-research {
+  margin-top: 0.6rem;
+}
+
+.info-research-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.research-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.research-list li {
+  line-height: 1.45;
+}
+
+.research-list .info-link {
+  display: block;
+  margin-top: 0.25rem;
+  margin-bottom: 0.15rem;
+  word-break: break-word;
+}
+
+.research-source {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.research-books {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.research-books img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.reference-list {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.reference-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: 0.3rem;
+}
+
+.reference-thumb {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 0;
+}
+
+.reference-item img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 0;
+  background-color: #ffffff;
+}
+
+/* Slightly less overlap so the Bronnenlijst title stays readable */
+.bronnenlijst-flush {
+  margin-top: -1.5vw;
+  padding-top: calc(1.6rem + 1.5vw);
+}
+
+.reference-item h3 {
+  margin-bottom: 0.35rem;
+}
+
+.reference-item p {
+  margin-bottom: 0.45rem;
+}
+
+.bronnenlijst h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.35rem;
+}
+
+.bronnenlijst p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-bottom: 0.35rem;
+}
+
+/* ===================================
    FOOTER
 =================================== */
 .site-footer {
@@ -829,6 +1018,46 @@ a.btn-lime:hover {
 }
 
 .footer-col a:hover { text-decoration: underline; }
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 900px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-books {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    max-width: 360px;
+  }
+
+  .reference-item {
+    grid-template-columns: 1fr;
+  }
+
+  .reference-item img {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .info-card {
+    padding: 0.9rem;
+  }
+
+  .reference-item img {
+    max-width: 100%;
+  }
+
+  .bronnenlijst p {
+    font-size: 0.76rem;
+  }
+}
 
 /* ===================================
    RESPONSIVE — TABLET  (≤ 768px)
