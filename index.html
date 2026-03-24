@@ -24,12 +24,25 @@
       </div>
       <div class="tabmenu">
         <button type="button" class="tablink" onclick="openPage('home', this)" id="defaultOpen">Home</button>
-         <!--   <button type="button" class="tablink" id="tab-informatie" onclick="openPage('informatie', this)">Informatie</button>-->
         <button type="button" class="tablink" id="tab-extensie" onclick="openPage('extensie', this)">Extensie</button>
-        <button type="button" class="tablink" id="tab-melden" onclick="openPage('melden', this)">Project</button>
+        <button type="button" class="tablink" id="tab-informatie" onclick="openPage('informatie', this)">Informatie</button>
         <button type="button" class="tablink" id="tab-merchendise" onclick="openPage('merchendise', this)">Webshop</button>
+        <button type="button" class="tablink" id="tab-melden" onclick="openPage('melden', this)">Project</button>
       </div>
-      <button type="button" class="herken-btn" onclick="openPage('home', document.getElementById('defaultOpen'))">Herken</button>
+      <div class="herken-wrap">
+        <button type="button" class="herken-btn" id="herkenToggle" aria-expanded="false" aria-controls="herkenPopup">Herken</button>
+        <div class="herken-popup" id="herkenPopup" aria-hidden="true">
+          <button type="button" class="herken-close" id="herkenClose" aria-label="Sluit Herken popup">x</button>
+          <h3>Herken:</h3>
+          <div class="herken-inner">
+            <ol>
+              <li>Identificeer de bron</li>
+              <li>Analyseer de inhoud</li>
+              <li>Bekijk de reacties</li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -130,30 +143,192 @@
     </div><!-- end #home -->
 
 
-    <!-- ===== INFORMATIE TAB 
+    <!-- ===== INFORMATIE TAB ===== -->
     <div id="informatie" class="tabcontent">
 
       <section class="section-navy card section-pad-sm">
-        <div class="container text-center">
-          <h2 class="section-title white">Informatie</h2>
+        <div class="container info-hero">
+          <h2 class="section-title white text-center">Informatie</h2>
+          <p class="white-muted">
+            Waarom is het kritisch kijken tegenover de media die je op Facebook tegenkomt relevanter dan ooit?
+            Hoe kunnen we dit probleem met disinformatie voorkomen? Hoe is het verdeeld? Wat is er al gedaan?
+            En wat moet er nog gebeuren?
+          </p>
         </div>
       </section>
 
       <section class="section-white section-pad">
-        <div class="container info-content">
-          <p class="navy">We leven in een tijd waarin het leven onrustig is en online niks meer te vertrouwen is. Wat is feit en wat is fictie. Wie kan je vertrouwen om de waarheid nog te zeggen. In de digitale wereld kom je niet voorbij algoritmes en filterbubbels, maar je kan jezelf er wel tegen beschermen. Wees niet naïef en informeer jezelf over alles wat met nep nieuws en complotten te maken heeft.</p>
-          <div class="divider-orange"></div>
-          <h3 class="section-title navy">Voor meer informatie over complottheorieën ga naar:</h3>
-          <div class="links-list">
-            <a href="https://www.mediawijsheid.nl/" class="info-link">Mediawijsheid.nl</a>
-            <a href="https://www.mediawijs.be/nl/dossiers/complotdenken" class="info-link">Mediawijs.be</a>
-            <a href="https://www.uva.nl/shared-content/faculteiten/nl/faculteit-der-geesteswetenschappen/nieuws/2022/06/de-wortels-van-de-complottheorie.html" class="info-link">Artikel Universiteit Amsterdam</a>
-            <a href="https://www.awbruna.nl/boek/non-fictie/jan-willem-van-prooijen/hoax/" class="info-link">Hoax, Jan-willem van Prooijen</a>
+        <div class="container">
+          <div class="info-grid">
+            <article class="info-card">
+              <h3 class="col-heading navy">Probleemstelling</h3>
+              <p class="navy">
+                Complotdenken bestaat al zolang de geschiedenis teruggaat en is niet specifiek een fenomeen van nu.
+                Het aantal complotdenkers stijgt wanneer het gevoel van crisis in de wereld ook stijgt, zo ook tijdens
+                de pandemie (Van Prooijen, 2024.).
+              </p>
+              <p class="navy">
+                Wat zeker wel gestegen is in de modernere jaren, is het belang van het internet en het online verspreiden
+                en consumeren van media en nieuws. Het herkennen van wat echt is en wat nep is, was al erg ingewikkeld.
+                Maar door de ontwikkelingen op technologisch en digitaal vlak, onder andere door AI, is dit nog
+                ingewikkelder geworden. De manier van opgroeien en leven tussen de hedendaagse generaties ligt door
+                maatschappelijke en technologische ontwikkelingen steeds verder uit elkaar. Jongere generaties gaan anders
+                om met nieuws, media en het consumeren hiervan (Van Der Maal, 2024).
+              </p>
+            </article>
+
+            <article class="info-card">
+              <h3 class="col-heading navy">Doelstelling</h3>
+              <p class="navy">
+                Dit project helpt Generatie X om zich te informeren en kritisch op te stellen tegenover de media die zij op
+                Facebook consumeren, door een tool en plek te bieden waar zij zich veilig voelen, hun kennis en ervaringen
+                kunnen delen en elkaar kunnen ondersteunen. Dit project ontwikkelt zich mee met de veranderingen van het
+                platform Facebook.
+              </p>
+              <p class="navy">
+                Het doel van dit project is het ontwikkelen van een campagne en digitale tool (webextensie) die Generatie X
+                ondersteunt bij het kritisch kijken naar complottheorie-gerelateerd content op Facebook, zonder angst of
+                wantrouwen te versterken.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <h3 class="col-heading navy">Relevantie</h3>
+              <p class="navy">
+                Dit probleem is maatschappelijk urgent: 48% van de Nederlanders maakt zich redelijk tot veel zorgen over
+                foutieve, misleidende informatie online (Amma Asante, 2025). Bovendien heeft Facebook in 2025 het
+                factcheckprogramma afgeschaft, waardoor complottheorie-gerelateerd content nog minder wordt gefilterd
+                (Neurink., 2025). Dit maakt een ontwerp dat zich richt op het versterken van kritisch denken bij Generatie X
+                op Facebook actueler dan ooit.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <h3 class="col-heading navy">Doelgroep</h3>
+              <p class="navy">
+                Het project is een campagne gericht op Generatie X (45-60 jaar) die Facebook gebruikt als belangrijkste
+                nieuwsbron. Omdat Facebook geen content meer factcheckt en algoritmes gebruikers steeds dieper in
+                filterbubbels trekken, is deze generatie extra kwetsbaar voor misleidende informatie en complottheorieen.
+              </p>
+            </article>
+          </div>
+
+          <section class="info-research">
+            <h2 class="section-title navy">Onderzoeks materiaal</h2>
+            <div class="info-research-grid">
+              <ul class="research-list">
+                <li class="navy">
+                  Hoax, Waarom mensen in complottheorieen geloven - Jan-Willem van Prooijen
+                  <a class="info-link" href="https://www.readshop.nl/boeken/hoax-9789400516441" target="_blank" rel="noopener noreferrer">
+                    https://www.readshop.nl/boeken/hoax-9789400516441
+                  </a>
+                </li>
+                <li class="navy">
+                  Ik wil gewoon mijn moeder terug, hoe we elkaar kwijtraakten door polarisatie - Marthe Walter
+                  <a class="info-link" href="https://www.bruna.nl/boeken/ik-wil-gewoon-mijn-moeder-terug-9789045050577" target="_blank" rel="noopener noreferrer">
+                    https://www.bruna.nl/boeken/ik-wil-gewoon-mijn-moeder-terug-9789045050577
+                  </a>
+                </li>
+                <li class="navy">
+                  Zo gedragen generaties zich online: de laatste cijfers [onderzoek]
+                  <a class="info-link" href="https://www.frankwatching.com/archive/2024/06/01/online-consumentengedrag-generaties-2024/" target="_blank" rel="noopener noreferrer">
+                    https://www.frankwatching.com/archive/2024/06/01/online-consumentengedrag-generaties-2024/
+                  </a>
+                  <span class="research-source">Marnienke van der Maal, 1 jun 2024</span>
+                </li>
+                <li class="navy">
+                  Facebook labelt maar een derde van desinformatie die door factcheckers is weerlegd
+                  <a class="info-link" href="https://nieuwscheckers.nl/facebook-labelt-maar-een-derde-van-desinformatie-die-door-factcheckers-is-weerlegd/" target="_blank" rel="noopener noreferrer">
+                    https://nieuwscheckers.nl/facebook-labelt-maar-een-derde-van-desinformatie-die-door-factcheckers-is-weerlegd/
+                  </a>
+                  <span class="research-source">Yitsz Neurink, 17 juli 2025</span>
+                </li>
+                <li class="navy">
+                  Wat moeten we met Facebook?
+                  <a class="info-link" href="https://www.nemokennislink.nl/publicaties/wat-moeten-we-met-facebook/" target="_blank" rel="noopener noreferrer">
+                    https://www.nemokennislink.nl/publicaties/wat-moeten-we-met-facebook/
+                  </a>
+                  <span class="research-source">Joris Tielens, 17 januari 2025</span>
+                </li>
+              </ul>
+
+              <div class="research-books">
+                <img src="beeld/Informatie/hoax-boek.png" alt="Hoax boek">
+                <img src="beeld/Informatie/moeder-terug-boek.png" alt="Ik wil gewoon mijn moeder terug boek">
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="section-lime card card-over section-pad">
+        <div class="container">
+          <h2 class="section-title white text-center">Referenties</h2>
+          <div class="reference-list">
+            <article class="reference-item">
+              <div class="reference-thumb">
+                <img src="beeld/Informatie/isdatechtzo.png" alt="isdatechtzo.nl">
+              </div>
+              <div>
+                <h3 class="navy">isdatechtzo.nl</h3>
+                <p class="navy">
+                  Het stimuleren van kritisch denken bij informatie online, zodat minder mensen zich tot
+                  complotconstructies wenden. Buiten de tool/test staat er op de website ook veel informatie,
+                  links naar projecten en tools. Het is ondersteund door de Rijksoverheid.
+                </p>
+                <a class="info-link" href="https://www.isdatechtzo.nl/" target="_blank" rel="noopener noreferrer">https://www.isdatechtzo.nl/</a>
+              </div>
+            </article>
+
+            <article class="reference-item">
+              <div class="reference-thumb">
+                <img src="beeld/Informatie/facts4all.png" alt="Facts 4 All">
+              </div>
+              <div>
+                <h3 class="navy">Facts 4 All</h3>
+                <p class="navy">
+                  Gaat over een community hub als plek die zich richt op bewustwording en kritisch denken over online
+                  desinformatie. Het project richt zich op jongeren en hun (groot)ouders en overbrugt de
+                  intergenerationele kloof.
+                </p>
+                <a class="info-link" href="https://www.mediawijs.be/nl/mediawijze-projecten/facts4all" target="_blank" rel="noopener noreferrer">https://www.mediawijs.be/nl/mediawijze-projecten/facts4all</a>
+              </div>
+            </article>
+
+            <article class="reference-item">
+              <div class="reference-thumb">
+                <img src="beeld/Informatie/EDUbox2.jpg" alt="EDUbox Overtuigen">
+              </div>
+              <div>
+                <h3 class="navy">EDUbox Overtuigen</h3>
+                <p class="navy">
+                  Dit project gaat over mensen laten herkennen wanneer grote bedrijven, bekende mensen en/of politici
+                  technieken toepassen om je te laten overtuigen. De EDUbox biedt introductie, theorievideo's,
+                  interactieve oefeningen, een checklist en extra inspiratie.
+                </p>
+                <a class="info-link" href="https://www.mediawijs.be/nl/tools/edubox-overtuigen" target="_blank" rel="noopener noreferrer">https://www.mediawijs.be/nl/tools/edubox-overtuigen</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-    </div>===== -->
+      <section class="section-navy card card-flush-top bronnenlijst-flush section-pad-sm">
+        <div class="container bronnenlijst">
+          <h2 class="white">Bronnenlijst</h2>
+          <p class="white-muted">Van Der Maal, M. (2024, 1 juni). Zo gedragen generaties zich online: de laatste cijfers [onderzoek]. Frankwatching. https://www.frankwatching.com/archive/2024/06/01/online-consumentengedrag-generaties-2024/</p>
+          <p class="white-muted">Hoax - Jan-Willem van Prooijen - A.W. Bruna Uitgevers. (2024). https://www.awbruna.nl/boek/non-fictie/jan-willem-van-prooijen/hoax/</p>
+          <p class="white-muted">Van Gool, R. (2020, 14 september). Wij zijn het nieuwe nieuws. De Groene Amsterdammer. https://www.groene.nl/artikel/wij-zijn-het-nieuwe-nieuws</p>
+          <p class="white-muted">Commissariaat voor de Media. Digital News Report Nederland 2025. Amma Asante (2025). https://www.cvdm.nl/wp-content/uploads/2025/06/Digital-News-Report-2025-1.pdf</p>
+          <p class="white-muted">Neurink, Y. (2025, 17 juli). Facebook labelt maar een derde van desinformatie die door factcheckers is weerlegd. https://nieuwscheckers.nl/facebook-labelt-maar-een-derde-van-desinformatie-die-door-factcheckers-is-weerlegd/</p>
+          <p class="white-muted">ReadShop. (2024). Hoax, Jan-Willem van Prooijen | Boek | 9789400516441. https://www.readshop.nl/boeken/hoax-9789400516441</p>
+          <p class="white-muted">Bruna. (2024). Ik wil gewoon mijn moeder terug, Marthe Walter | Boek | 9789045050577. https://www.bruna.nl/boeken/ik-wil-gewoon-mijn-moeder-terug-9789045050577</p>
+          <p class="white-muted">Mediawijs. EDUbox overtuigen. https://www.mediawijs.be/nl/tools/edubox-overtuigen</p>
+          <p class="white-muted">IsDatEchtZo. Home Nepnieuws - Herken jij een echt/nep bericht? https://www.isdatechtzo.nl/</p>
+        </div>
+      </section>
+
+    </div>
     <!-- end #informatie --> 
 
 
@@ -455,13 +630,14 @@
             </div>
             <div class="stakeholder-text">
               <h3 class="white">Facebook</h3>
-              <p class="white-muted">Hoe de extensie werkt en informatie erover, doelstelling extensie</p>
+              <p class="white-muted">Facebook is bewust gekozen als platform omdat Generatie X hier met 70% het meest actief is van alle sociale media platforms (Burghout, 2025). De beslissing van Meta in 2025 om factchecking af te schaffen maakt een interventie als Feit of Fictie extra relevant: het platform beschermt de gebruiker steeds minder, waardoor externe tools noodzakelijker worden (Neurink, 2025).</p>
             </div>
           </div>
           <div class="stakeholder-row row-reverse">
             <div class="stakeholder-text">
               <h3 class="white">Mediawijs</h3>
-              <p class="white-muted">Hoe de extensie werkt en informatie erover, doelstelling extensie</p>
+              <p class="white-muted">Mediawijs heeft een uitgebreid dossier over complotdenken en meerdere projecten en tools ontwikkeld die direct aansluiten bij mijn ontwerpcriteria. Mediawijs investeert al in vergelijkbare projecten zoals Facts4All en Whats New. Ik heb hen benaderd voor een interview en samenwerking.
+              </p>
             </div>
             <div class="stakeholder-logo">
               <img src="beeld/Stakeholders/mediawijs.png" alt="Mediawijs">
@@ -473,13 +649,15 @@
             </div>
             <div class="stakeholder-text">
               <h3 class="white">Rijksoverheid</h3>
-              <p class="white-muted">Hoe de extensie werkt en informatie erover, doelstelling extensie</p>
+              <p class="white-muted">Nederlandse bevolking informeren over hoe om te gaan met misinformatie, nieuws en complottheorie-gerelateerde content.
+                Ze kunnen in het project investeren en het werkelijkheid maken. Ze kunnen het groot maken door een samenwerking aan te gaan en het project breed in te zetten. De Rijksoverheid investeert al in vergelijkbare projecten zoals isdatechtzo.nl en BENEDMO. Dit laat zien dat er zowel politieke als financiële wil is voor een project als Feit of Fictie.
+                </p>
             </div>
           </div>
           <div class="stakeholder-row row-reverse">
             <div class="stakeholder-text">
               <h3 class="white">Bibliotheek</h3>
-              <p class="white-muted">Hoe de extensie werkt en informatie erover, doelstelling extensie</p>
+              <p class="white-muted">De Bibliotheek is een vertrouwde en laagdrempelige plek voor deze generatie, wat het een ideaal kanaal maakt om het project te verspreiden. Denk aan folders en stickers in de vestigingen, maar ook aan een samenwerking waarbij de Bibliotheek de webextensie en het campagnemateriaal van Feit of Fictie integreert in hun bestaande digitale cursussen. Zo kunnen bibliotheekmedewerkers de extensie introduceren tijdens computerspreekuren of digicursussen, precies op het moment dat de doelgroep al bezig is met het leren omgaan met internet en sociale media.</p>
             </div>
             <div class="stakeholder-logo">
               <img src="beeld/Stakeholders/Bibliotheek.png" alt="de Bibliotheek">
@@ -513,7 +691,7 @@
         <div class="container text-center">
           <h2 class="section-title white">Webshop</h2>
           <h3 class="col-heading lime" style="margin-bottom:0.8rem;">Help ook mee</h3>
-          <p class="white-muted shop-intro">Draag deze merchandisa om de campagne door te zetten. Inspireer je omgeving om kritisch te kijken naar de informatie die ze online tegen komen. Blijf op je mobile en in je koffie pauze ook kritisch.</p>
+          <p class="white-muted shop-intro">Draag deze merchandise om de campagne door te zetten. Inspireer je omgeving om kritisch te kijken naar de informatie die ze online tegen komen. Blijf op je telefoon en in je koffie pauze ook kritisch.</p>
         </div>
       </section>
 
@@ -527,7 +705,7 @@
               <img src="beeld/Merchandise/Sticker2.jpg" alt="Sticker 2">
             </div>
             <div class="merch-text">
-              <p class="navy">Blijf tijdens je koffie pauze ook scherp/kritisch door de feit of fictie mok. Inspireer je collega dit ook te doen.</p>
+              <p class="navy">Kom je opstraat een sticker tegen die onbetrouwbare informatie verspreid. Herinneren mensen om ook hier kritisch naar te kijken. Of plak de sticker overal waar jij hem wilt, om de campagne te promoten.</p>
               <button class="btn-lime">Kopen</button> <!-- nowhere -->
             </div>
           </div>
@@ -544,7 +722,7 @@
               <img src="beeld/Merchandise/Mok2.jpg" alt="Mok 2">
             </div>
             <div class="merch-text">
-              <p class="navy">Kom je opstraat een sticker tegen die onbetrouwbare informatie verspreid. Herinneren mensen om ook hier kritisch naar te kijken. Of plak de sticker overal waar jij hem wilt, om de campagne te promoten.</p>
+              <p class="navy">Blijf tijdens je koffie pauze ook scherp/kritisch door de feit of fictie mok. Inspireer je collega's dit ook te doen.</p>
               <button class="btn-lime">Kopen</button> <!-- nowhere -->
             </div>
           </div>
