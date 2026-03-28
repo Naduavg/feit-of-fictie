@@ -30,43 +30,11 @@ function openPage(pageName, elmnt) {
 document.addEventListener("DOMContentLoaded", function () {
   const defaultOpen = document.getElementById("defaultOpen");
   const homeTab = document.getElementById("home");
-  const herkenToggle = document.getElementById("herkenToggle");
-  const herkenPopup = document.getElementById("herkenPopup");
-  const herkenClose = document.getElementById("herkenClose");
 
   if (defaultOpen) {
     defaultOpen.click();
   } else if (homeTab) {
     // Safe fallback if the default button isn't present
     homeTab.style.display = "block";
-  }
-
-  function setHerkenPopup(open) {
-    if (!herkenToggle || !herkenPopup) return;
-    herkenPopup.classList.toggle("is-open", open);
-    herkenToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    herkenPopup.setAttribute("aria-hidden", open ? "false" : "true");
-  }
-
-  if (herkenToggle && herkenPopup) {
-    herkenToggle.addEventListener("click", function () {
-      const isOpen = herkenPopup.classList.contains("is-open");
-      setHerkenPopup(!isOpen);
-    });
-
-    if (herkenClose) {
-      herkenClose.addEventListener("click", function () {
-        setHerkenPopup(false);
-      });
-    }
-
-    document.addEventListener("click", function (event) {
-      if (!herkenPopup.classList.contains("is-open")) return;
-      const clickedInsidePopup = herkenPopup.contains(event.target);
-      const clickedToggle = herkenToggle.contains(event.target);
-      if (!clickedInsidePopup && !clickedToggle) {
-        setHerkenPopup(false);
-      }
-    });
   }
 });
