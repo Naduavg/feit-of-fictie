@@ -188,7 +188,7 @@ header {
   top: 50%;
   transform: translateY(-50%);
   flex-shrink: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 .nav-logo img {
@@ -201,7 +201,10 @@ header {
 /* ===================================
    TAB BUTTONS
 =================================== */
+/* Tabs sit above the logo when the menu wraps so touches hit the tab buttons. */
 .tabmenu {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,6 +224,8 @@ header {
   padding: 0.45rem 0.85rem;
   border-radius: 6px;
   transition: background-color 0.18s ease, color 0.18s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.12);
 }
 
 .tablink:hover {
@@ -265,6 +270,7 @@ main {
   padding: 0.65rem 1.6rem;
   transition: background-color 0.18s ease, transform 0.1s ease;
   display: inline-block;
+  touch-action: manipulation;
 }
 
 .btn-orange { background-color: #EA7715; color: #ffffff; }
@@ -1073,6 +1079,7 @@ a.btn-lime:hover {
   text-decoration: none;
   font-size: 0.85rem;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .footer-col a:hover { text-decoration: underline; }
